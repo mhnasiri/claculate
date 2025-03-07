@@ -11,7 +11,7 @@ pipeline{
     }
     post{
         always{
-            sh '''
+            echo '''
                 ${currentBild.fullDisplayName} your build compalted.${env.BUILD_URL}
 
             '''
