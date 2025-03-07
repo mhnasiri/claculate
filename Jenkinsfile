@@ -9,4 +9,12 @@ pipeline{
             }
         }
     }
+    post{
+        always{
+            sh '''
+                ${currentBild.fullDisplayName} your build compalted.${env.BUILD_URL}
+
+            '''
+        }
+    }
 }
