@@ -11,10 +11,12 @@ pipeline{
     }
     post{
         always{
-            echo '''
-                ${currentBild.fullDisplayName} your build compalted.${env.BUILD_URL}
-
-            '''
+            always {
+                echo "Build result: ${currentBuild.result}"
+                echo "Build duration: ${currentBuild.duration} ms"
+                echo "${currentBuild.fullDisplayName}"
+                echo "${env.BUILD_URL}"
+    }
         }
     }
 }
